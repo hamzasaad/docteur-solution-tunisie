@@ -1,0 +1,180 @@
+.dst-dash__frame {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  border-radius: var(--dst-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--dst-shadow-lg);
+  min-height: 560px;
+}
+
+.dst-dash__sidebar {
+  background: var(--dst-gradient-dark);
+  color: rgba(255,255,255,.75);
+  padding: 22px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.dst-dash__sidebar-logo {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: var(--dst-gradient-primary);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 800; font-size: 12px;
+  margin-left: 4px;
+}
+
+.dst-dash__sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+    transition: background .2s ease, color .2s ease;
+    cursor: pointer;
+
+    &:hover { background: rgba(255,255,255,.06); color: #fff; }
+    &.is-active { background: rgba(22,119,255,.22); color: #fff; }
+  }
+}
+
+.dst-dash__main {
+  background: var(--dst-bg);
+  padding: 26px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.dst-dash__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h3 { font-size: 19px; margin-bottom: 2px; }
+  span { font-size: 13.5px; color: var(--dst-text-muted); }
+}
+
+.dst-dash__topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--dst-text-muted);
+}
+
+.dst-dash__avatar {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--dst-gradient-primary);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+}
+
+.dst-dash__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.dst-dash__stat {
+  background: #fff;
+  border: 1px solid var(--dst-border);
+  border-radius: var(--dst-radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--dst-blue);
+
+  strong { display: block; font-family: var(--dst-font-display); font-size: 20px; color: var(--dst-navy); }
+  span { font-size: 12px; color: var(--dst-text-muted); }
+}
+
+.dst-dash__body {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 18px;
+  flex: 1;
+}
+
+.dst-dash__chart-card, .dst-dash__list-card {
+  background: #fff;
+  border: 1px solid var(--dst-border);
+  border-radius: var(--dst-radius-md);
+  padding: 18px;
+}
+
+.dst-dash__card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--dst-navy);
+  margin-bottom: 16px;
+}
+
+.dst-dash__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 170px;
+
+  div {
+    flex: 1;
+    background: var(--dst-gradient-primary);
+    border-radius: 8px 8px 3px 3px;
+    opacity: .88;
+  }
+}
+
+.dst-dash__patient {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid var(--dst-border);
+  &:first-of-type { border-top: none; }
+}
+
+.dst-dash__patient-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(25,195,177,.12);
+  color: var(--dst-turquoise);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700;
+  flex-shrink: 0;
+}
+
+.dst-dash__patient-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  strong { font-size: 13px; color: var(--dst-navy); }
+  span { font-size: 11.5px; color: var(--dst-text-muted); }
+}
+
+.dst-dash__patient-time { font-size: 11.5px; color: var(--dst-text-muted); flex-shrink: 0; }
+
+@media (max-width: 900px) {
+  .dst-dash__frame { grid-template-columns: 1fr; }
+  .dst-dash__sidebar { flex-direction: row; overflow-x: auto; }
+  .dst-dash__sidebar nav { flex-direction: row; }
+  .dst-dash__sidebar nav a span { display: none; }
+  .dst-dash__stats { grid-template-columns: repeat(2, 1fr); }
+  .dst-dash__body { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .dst-dash__main { padding: 20px 16px; }
+}

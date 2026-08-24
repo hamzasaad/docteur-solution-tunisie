@@ -1,0 +1,49 @@
+<header class="dst-header" [ngClass]="{ 'is-scrolled': isScrolled }">
+  <div class="dst-container dst-header__inner">
+    <a routerLink="/" class="dst-header__logo" (click)="closeMobileMenu()">
+      <span class="dst-header__logo-mark">DST</span>
+      <span class="dst-header__logo-text">
+        Docteur Solution <strong>Tunisie</strong>
+      </span>
+    </a>
+
+    <nav class="dst-header__nav" aria-label="Navigation principale">
+      <a
+        *ngFor="let link of navLinks"
+        [routerLink]="link.path"
+        [fragment]="link.fragment"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+      >{{ link.label }}</a>
+    </nav>
+
+    <div class="dst-header__actions">
+      <a routerLink="/contact" class="dst-btn dst-btn-primary dst-header__cta">
+        Demander une démonstration
+      </a>
+      <button
+        type="button"
+        class="dst-header__burger"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="isMobileMenuOpen"
+        aria-label="Ouvrir le menu"
+      >
+        <dst-icon [name]="isMobileMenuOpen ? 'x' : 'menu'" [size]="24"></dst-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="dst-header__mobile" [class.is-open]="isMobileMenuOpen">
+    <nav aria-label="Navigation mobile">
+      <a
+        *ngFor="let link of navLinks"
+        [routerLink]="link.path"
+        [fragment]="link.fragment"
+        (click)="closeMobileMenu()"
+      >{{ link.label }}</a>
+    </nav>
+    <a routerLink="/contact" class="dst-btn dst-btn-primary" (click)="closeMobileMenu()">
+      Demander une démonstration
+    </a>
+  </div>
+</header>

@@ -1,0 +1,19 @@
+<article class="dst-solution-card" [ngClass]="'is-' + solution.color">
+  <div class="dst-solution-card__icon">
+    <dst-icon [name]="solution.icon" [size]="24"></dst-icon>
+  </div>
+  <h3>{{ solution.name }}</h3>
+  <p class="dst-solution-card__tagline">{{ solution.tagline }}</p>
+  <p class="dst-solution-card__desc">{{ solution.description }}</p>
+
+  <ul class="dst-solution-card__features" *ngIf="!compact">
+    <li *ngFor="let f of solution.features.slice(0, 4)">
+      <dst-icon name="check" [size]="14"></dst-icon>{{ f }}
+    </li>
+  </ul>
+
+  <a [routerLink]="['/solutions', solution.slug]" class="dst-solution-card__link">
+    Découvrir
+    <dst-icon name="arrow-right" [size]="16"></dst-icon>
+  </a>
+</article>

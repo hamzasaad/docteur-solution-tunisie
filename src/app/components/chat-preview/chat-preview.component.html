@@ -1,0 +1,73 @@
+<section class="dst-section dst-chat">
+  <div class="dst-container">
+    <div class="dst-section-head" dstReveal>
+      <span class="dst-eyebrow">Messagerie sécurisée</span>
+      <h2>Une communication simple et sécurisée</h2>
+      <p>
+        Échangez avec vos patients et vos confrères depuis une messagerie
+        professionnelle pensée pour le contexte médical.
+      </p>
+    </div>
+
+    <div class="dst-chat__frame dst-glass" dstReveal>
+      <div class="dst-chat__list">
+        <div class="dst-chat__list-header">
+          <strong>Conversations</strong>
+          <dst-icon name="search" [size]="16"></dst-icon>
+        </div>
+        <div
+          class="dst-chat__conversation"
+          *ngFor="let c of conversations"
+          [ngClass]="{ 'is-active': c.active }"
+        >
+          <div class="dst-chat__avatar">
+            {{ c.initials }}
+            <span class="dst-chat__online" *ngIf="c.online"></span>
+          </div>
+          <div class="dst-chat__conv-info">
+            <div class="dst-chat__conv-top">
+              <strong>{{ c.name }}</strong>
+              <span>{{ c.time }}</span>
+            </div>
+            <div class="dst-chat__conv-bottom">
+              <span>{{ c.lastMessage }}</span>
+              <span class="dst-chat__unread" *ngIf="c.unread">{{ c.unread }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dst-chat__thread">
+        <div class="dst-chat__thread-header">
+          <div class="dst-chat__avatar">
+            SL
+            <span class="dst-chat__online"></span>
+          </div>
+          <div>
+            <strong>Sarah Larbi</strong>
+            <span>En ligne</span>
+          </div>
+        </div>
+
+        <div class="dst-chat__messages">
+          <div
+            class="dst-chat__bubble"
+            *ngFor="let m of messages"
+            [ngClass]="{ 'is-me': m.from === 'me' }"
+          >
+            <p>{{ m.text }}</p>
+            <span>{{ m.time }}</span>
+          </div>
+        </div>
+
+        <div class="dst-chat__composer">
+          <dst-icon name="paperclip" [size]="18"></dst-icon>
+          <span class="dst-chat__composer-placeholder">Écrire un message…</span>
+          <button type="button" class="dst-chat__send" aria-label="Envoyer">
+            <dst-icon name="send" [size]="16"></dst-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

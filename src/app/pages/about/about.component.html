@@ -1,0 +1,64 @@
+<section class="dst-page-hero dst-about-hero">
+  <div class="dst-container" dstReveal>
+    <span class="dst-eyebrow">
+      <dst-icon name="award" [size]="14"></dst-icon>
+      À propos
+    </span>
+    <h1>40 ans d'expertise santé.<br />Une nouvelle génération de solutions digitales.</h1>
+    <p>
+      Docteur Solution Tunisie est une entreprise spécialisée dans les
+      solutions informatiques et digitales pour le secteur de la santé.
+      Une expertise historique du terrain médical, combinée aux technologies
+      modernes, au service des professionnels de santé.
+    </p>
+  </div>
+</section>
+
+<dst-stats></dst-stats>
+
+<section class="dst-section dst-about-timeline">
+  <div class="dst-container">
+    <div class="dst-section-head" dstReveal>
+      <span class="dst-eyebrow">Notre histoire</span>
+      <h2>Une expertise construite sur le terrain</h2>
+    </div>
+
+    <div class="dst-about-timeline__list">
+      <div
+        class="dst-about-timeline__item"
+        *ngFor="let step of timeline; let i = index"
+        dstReveal
+        [dstRevealDelay]="i * 100"
+      >
+        <span class="dst-about-timeline__year">{{ step.year }}</span>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dst-section dst-about-mission" id="expertise">
+  <div class="dst-container dst-about-mission__grid">
+    <div dstReveal>
+      <span class="dst-eyebrow">Notre mission</span>
+      <h2>Simplifier le quotidien des professionnels de santé</h2>
+      <p>
+        Notre objectif est de proposer des solutions technologiques
+        permettant aux professionnels de santé de gagner du temps,
+        améliorer leur organisation et mieux gérer leur activité — qu'ils
+        soient médecins, cabinets médicaux, cliniques, établissements de
+        santé, secrétariats médicaux ou équipes administratives.
+      </p>
+    </div>
+    <div class="dst-about-mission__card dst-glass" dstReveal [dstRevealDelay]="120">
+      <dst-icon name="heart-handshake" [size]="30"></dst-icon>
+      <strong>« La technologie doit simplifier le travail des professionnels de santé, pas le compliquer. »</strong>
+    </div>
+  </div>
+</section>
+
+<dst-tech-professionals></dst-tech-professionals>
+<dst-experience></dst-experience>
+<dst-values></dst-values>
+<dst-cta></dst-cta>

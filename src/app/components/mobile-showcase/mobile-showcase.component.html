@@ -1,0 +1,55 @@
+<section class="dst-section dst-mobile">
+  <div class="dst-container dst-mobile__grid">
+    <div class="dst-mobile__copy" dstReveal>
+      <span class="dst-eyebrow">Sur mobile aussi</span>
+      <h2>Vos outils, où que vous soyez</h2>
+      <p>
+        Nos solutions s'utilisent aussi bien sur smartphone : les médecins
+        gardent leur agenda et leurs messages à portée de main, les patients
+        accèdent à leurs rendez-vous et à leur dossier en toute simplicité.
+      </p>
+      <div class="dst-mobile__points">
+        <div><dst-icon name="calendar" [size]="16"></dst-icon> Agenda &amp; rendez-vous</div>
+        <div><dst-icon name="bell" [size]="16"></dst-icon> Notifications en temps réel</div>
+        <div><dst-icon name="message-circle" [size]="16"></dst-icon> Messagerie sécurisée</div>
+        <div><dst-icon name="folder-heart" [size]="16"></dst-icon> Dossier patient</div>
+      </div>
+    </div>
+
+    <div class="dst-mobile__phones" dstReveal [dstRevealDelay]="150">
+      <div class="dst-mobile__phone dst-mobile__phone--doctor">
+        <div class="dst-mobile__notch"></div>
+        <div class="dst-mobile__screen">
+          <span class="dst-mobile__app-label">App Médecin</span>
+          <div class="dst-mobile__card">
+            <strong>12</strong>
+            <span>RDV aujourd'hui</span>
+          </div>
+          <div class="dst-mobile__row">
+            <dst-icon name="user-round" [size]="14"></dst-icon>
+            <span>Sarah Larbi — 14:30</span>
+          </div>
+          <div class="dst-mobile__row">
+            <dst-icon name="video" [size]="14"></dst-icon>
+            <span>Mehdi Khelifi — 15:15</span>
+          </div>
+          <div class="dst-mobile__chip"><dst-icon name="message-circle" [size]="13"></dst-icon> 3 nouveaux messages</div>
+        </div>
+      </div>
+
+      <div class="dst-mobile__phone dst-mobile__phone--patient">
+        <div class="dst-mobile__notch"></div>
+        <div class="dst-mobile__screen">
+          <span class="dst-mobile__app-label">App Patient</span>
+          <div class="dst-mobile__card dst-mobile__card--alt">
+            <strong>Dr Amri</strong>
+            <span>Prochain RDV — Jeudi 14:30</span>
+          </div>
+          <div class="dst-mobile__row"><dst-icon name="file-text" [size]="14"></dst-icon> Dossier médical</div>
+          <div class="dst-mobile__row"><dst-icon name="video" [size]="14"></dst-icon> Téléconsultation</div>
+          <div class="dst-mobile__row"><dst-icon name="message-circle" [size]="14"></dst-icon> Messagerie</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

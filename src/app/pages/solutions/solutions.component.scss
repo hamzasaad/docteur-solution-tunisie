@@ -1,0 +1,18 @@
+.dst-page-hero {
+  padding: 64px 0 20px;
+  text-align: center;
+  background:
+    radial-gradient(50% 60% at 50% 0%, rgba(22,119,255,.08), transparent 70%),
+    var(--dst-bg);
+
+  h1 {
+    font-size: clamp(30px, 4vw, 46px);
+    max-width: 720px;
+    margin: 0 auto .5em;
+  }
+  p {
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: 17px;
+  }
+}

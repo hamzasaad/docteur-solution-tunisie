@@ -1,0 +1,19 @@
+<section class="dst-section dst-solutions" id="solutions">
+  <div class="dst-container">
+    <div class="dst-section-head" dstReveal>
+      <span class="dst-eyebrow" *ngIf="showEyebrow">Nos solutions</span>
+      <h2>{{ title }}</h2>
+      <p>{{ subtitle }}</p>
+    </div>
+
+    <div class="dst-solutions__grid">
+      <div
+        *ngFor="let solution of visibleSolutions; let i = index"
+        dstReveal
+        [dstRevealDelay]="(i % 4) * 90"
+      >
+        <dst-solution-card [solution]="solution"></dst-solution-card>
+      </div>
+    </div>
+  </div>
+</section>

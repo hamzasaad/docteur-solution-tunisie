@@ -1,0 +1,23 @@
+<section class="dst-section dst-values">
+  <div class="dst-container">
+    <div class="dst-section-head" dstReveal>
+      <span class="dst-eyebrow">Nos valeurs</span>
+      <h2>Ce qui guide notre travail au quotidien</h2>
+    </div>
+
+    <div class="dst-values__grid">
+      <div
+        class="dst-values__item"
+        *ngFor="let v of values; let i = index"
+        dstReveal
+        [dstRevealDelay]="(i % 3) * 90"
+      >
+        <div class="dst-values__icon">
+          <dst-icon [name]="v.icon" [size]="22"></dst-icon>
+        </div>
+        <h3>{{ v.title }}</h3>
+        <p>{{ v.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

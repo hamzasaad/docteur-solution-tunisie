@@ -1,0 +1,27 @@
+<section class="dst-section dst-security" id="securite">
+  <div class="dst-container">
+    <div class="dst-section-head" dstReveal>
+      <span class="dst-eyebrow">Sécurité &amp; confidentialité</span>
+      <h2>La sécurité au cœur de nos solutions</h2>
+      <p>
+        Nos solutions sont conçues avec une attention particulière portée à
+        la sécurité et à la confidentialité des données de santé.
+      </p>
+    </div>
+
+    <div class="dst-security__grid">
+      <div
+        class="dst-security__item"
+        *ngFor="let point of points; let i = index"
+        dstReveal
+        [dstRevealDelay]="(i % 4) * 80"
+      >
+        <div class="dst-security__icon">
+          <dst-icon [name]="point.icon" [size]="20"></dst-icon>
+        </div>
+        <h3>{{ point.title }}</h3>
+        <p>{{ point.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

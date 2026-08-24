@@ -1,0 +1,38 @@
+<section class="dst-section dst-experience" id="innovation">
+  <div class="dst-container">
+    <div class="dst-section-head" dstReveal>
+      <span class="dst-eyebrow">Héritage &amp; avenir</span>
+      <h2>40 ans d'expérience. Une vision tournée vers demain.</h2>
+      <p>
+        Notre expérience historique du secteur de la santé est un socle
+        solide pour construire les solutions digitales de demain.
+      </p>
+    </div>
+
+    <div class="dst-experience__grid">
+      <div class="dst-experience__col dst-experience__col--heritage" dstReveal>
+        <span class="dst-experience__label">Notre héritage</span>
+        <h3>40 ans dans la santé</h3>
+        <ul>
+          <li *ngFor="let item of heritage">
+            <dst-icon name="check" [size]="16"></dst-icon>{{ item }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="dst-experience__divider" aria-hidden="true">
+        <dst-icon name="arrow-right" [size]="22"></dst-icon>
+      </div>
+
+      <div class="dst-experience__col dst-experience__col--future" dstReveal [dstRevealDelay]="150">
+        <span class="dst-experience__label">Notre avenir</span>
+        <h3>Une nouvelle génération de solutions</h3>
+        <ul>
+          <li *ngFor="let item of future">
+            <dst-icon name="sparkles" [size]="16"></dst-icon>{{ item }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

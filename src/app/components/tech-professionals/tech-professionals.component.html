@@ -1,0 +1,50 @@
+<section class="dst-section dst-tech">
+  <div class="dst-container dst-tech__grid">
+    <div class="dst-tech__copy" dstReveal>
+      <span class="dst-eyebrow">Notre approche</span>
+      <h2>Une technologie pensée pour les professionnels de santé</h2>
+      <p class="dst-tech__lead">
+        « La technologie doit simplifier le travail des professionnels de
+        santé, pas le compliquer. »
+      </p>
+      <p>
+        Chaque solution Docteur Solution Tunisie est conçue au plus près du
+        terrain médical : des interfaces claires, des parcours pensés pour
+        la réalité d'un cabinet ou d'un établissement de santé, et une
+        technologie qui s'efface pour laisser la place au soin.
+      </p>
+
+      <div class="dst-tech__pillars">
+        <div class="dst-tech__pillar" *ngFor="let p of pillars">
+          <dst-icon [name]="p.icon" [size]="18"></dst-icon>
+          <span>{{ p.label }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dst-tech__visual" dstReveal [dstRevealDelay]="150">
+      <div class="dst-tech__illustration dst-glass">
+        <div class="dst-tech__row">
+          <dst-icon name="folder-heart" [size]="20"></dst-icon>
+          <div class="dst-tech__bar" style="width: 82%"></div>
+        </div>
+        <div class="dst-tech__row">
+          <dst-icon name="calendar" [size]="20"></dst-icon>
+          <div class="dst-tech__bar" style="width: 64%"></div>
+        </div>
+        <div class="dst-tech__row">
+          <dst-icon name="message-circle" [size]="20"></dst-icon>
+          <div class="dst-tech__bar" style="width: 90%"></div>
+        </div>
+        <div class="dst-tech__row">
+          <dst-icon name="shield-check" [size]="20"></dst-icon>
+          <div class="dst-tech__bar" style="width: 74%"></div>
+        </div>
+        <div class="dst-tech__badge">
+          <dst-icon name="check-circle" [size]="16"></dst-icon>
+          Interface unifiée, données centralisées
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

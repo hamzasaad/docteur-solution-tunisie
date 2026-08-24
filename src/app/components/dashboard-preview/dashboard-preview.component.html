@@ -1,0 +1,85 @@
+<section class="dst-section dst-dash">
+  <div class="dst-container">
+    <div class="dst-section-head" dstReveal>
+      <span class="dst-eyebrow">Tableau de bord médical</span>
+      <h2>Toute votre activité, en un coup d'œil</h2>
+      <p>
+        Une interface SaaS premium pour piloter patients, rendez-vous,
+        consultations et statistiques, avec une lecture immédiate de
+        l'essentiel.
+      </p>
+    </div>
+
+    <div class="dst-dash__frame dst-glass" dstReveal>
+      <aside class="dst-dash__sidebar">
+        <div class="dst-dash__sidebar-logo">DST</div>
+        <nav>
+          <a *ngFor="let item of sidebarItems" [class.is-active]="item.active">
+            <dst-icon [name]="item.icon" [size]="18"></dst-icon>
+            <span>{{ item.label }}</span>
+          </a>
+        </nav>
+      </aside>
+
+      <div class="dst-dash__main">
+        <header class="dst-dash__topbar">
+          <div>
+            <h3>Bonjour Dr Amri 👋</h3>
+            <span>Voici un résumé de votre journée</span>
+          </div>
+          <div class="dst-dash__topbar-actions">
+            <dst-icon name="search" [size]="18"></dst-icon>
+            <dst-icon name="bell" [size]="18"></dst-icon>
+            <div class="dst-dash__avatar">DR</div>
+          </div>
+        </header>
+
+        <div class="dst-dash__stats">
+          <div class="dst-dash__stat">
+            <dst-icon name="users" [size]="18"></dst-icon>
+            <div><strong>1 248</strong><span>Patients</span></div>
+          </div>
+          <div class="dst-dash__stat">
+            <dst-icon name="calendar" [size]="18"></dst-icon>
+            <div><strong>12</strong><span>RDV aujourd'hui</span></div>
+          </div>
+          <div class="dst-dash__stat">
+            <dst-icon name="video" [size]="18"></dst-icon>
+            <div><strong>5</strong><span>Consultations</span></div>
+          </div>
+          <div class="dst-dash__stat">
+            <dst-icon name="message-circle" [size]="18"></dst-icon>
+            <div><strong>8</strong><span>Messages</span></div>
+          </div>
+        </div>
+
+        <div class="dst-dash__body">
+          <div class="dst-dash__chart-card">
+            <div class="dst-dash__card-head">
+              <span>Activité de la semaine</span>
+              <dst-icon name="trending-up" [size]="16"></dst-icon>
+            </div>
+            <div class="dst-dash__bars">
+              <div *ngFor="let bar of weeklyBars" [style.height.%]="bar"></div>
+            </div>
+          </div>
+
+          <div class="dst-dash__list-card">
+            <div class="dst-dash__card-head">
+              <span>Patients récents</span>
+              <dst-icon name="chevron-right" [size]="16"></dst-icon>
+            </div>
+            <div class="dst-dash__patient" *ngFor="let p of recentPatients">
+              <div class="dst-dash__patient-avatar">{{ p.initials }}</div>
+              <div class="dst-dash__patient-info">
+                <strong>{{ p.name }}</strong>
+                <span>{{ p.reason }}</span>
+              </div>
+              <span class="dst-dash__patient-time">{{ p.time }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

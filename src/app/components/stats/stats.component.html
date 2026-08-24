@@ -1,0 +1,8 @@
+<section class="dst-stats">
+  <div class="dst-container dst-stats__grid">
+    <div class="dst-stats__item" *ngFor="let stat of stats; let i = index" dstReveal [dstRevealDelay]="i * 90">
+      <strong>{{ stat.display | number }}{{ stat.suffix }}</strong>
+      <span>{{ stat.label }}</span>
+    </div>
+  </div>
+</section>

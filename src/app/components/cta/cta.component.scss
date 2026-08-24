@@ -1,0 +1,39 @@
+.dst-cta {
+  padding: 100px 0;
+  background: var(--dst-gradient-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.dst-cta__inner {
+  position: relative;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.dst-cta__glow {
+  position: absolute;
+  inset: -60% -20%;
+  background: radial-gradient(closest-side, rgba(22,119,255,.25), transparent 70%);
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.dst-cta h2 {
+  color: #fff;
+  font-size: clamp(28px, 3.6vw, 42px);
+}
+
+.dst-cta p {
+  color: rgba(255,255,255,.75);
+  font-size: 17px;
+  margin-bottom: 36px;
+}
+
+.dst-cta__actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}

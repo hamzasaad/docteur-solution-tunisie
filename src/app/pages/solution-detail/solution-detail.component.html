@@ -1,0 +1,76 @@
+<ng-container *ngIf="solution; else notFound">
+  <section class="dst-detail-hero" [ngClass]="'is-' + solution.color">
+    <div class="dst-container dst-detail-hero__inner">
+      <div dstReveal>
+        <a routerLink="/solutions" class="dst-detail-hero__back">
+          <dst-icon name="arrow-right" [size]="14"></dst-icon>
+          Toutes les solutions
+        </a>
+        <span class="dst-eyebrow">
+          <dst-icon [name]="solution.icon" [size]="14"></dst-icon>
+          Solution digitale santé
+        </span>
+        <h1>{{ solution.name }}</h1>
+        <p class="dst-detail-hero__tagline">{{ solution.tagline }}</p>
+        <p class="dst-detail-hero__desc">{{ solution.longDescription }}</p>
+
+        <div class="dst-detail-hero__audiences">
+          <span *ngFor="let a of solution.audiences">{{ a }}</span>
+        </div>
+
+        <div class="dst-detail-hero__cta">
+          <a routerLink="/contact" class="dst-btn dst-btn-primary">
+            Demander une démonstration
+            <dst-icon name="arrow-right" [size]="18"></dst-icon>
+          </a>
+          <a routerLink="/solutions" class="dst-btn dst-btn-ghost">Voir toutes les solutions</a>
+        </div>
+      </div>
+
+      <div class="dst-detail-hero__icon" dstReveal [dstRevealDelay]="150">
+        <dst-icon [name]="solution.icon" [size]="64"></dst-icon>
+      </div>
+    </div>
+  </section>
+
+  <section class="dst-section dst-detail-features">
+    <div class="dst-container">
+      <div class="dst-section-head" dstReveal>
+        <span class="dst-eyebrow">Fonctionnalités</span>
+        <h2>Tout ce dont vous avez besoin</h2>
+        <p>Une solution pensée pour couvrir l'ensemble des besoins liés à cette activité.</p>
+      </div>
+
+      <div class="dst-detail-features__grid">
+        <div
+          class="dst-detail-features__item"
+          *ngFor="let f of solution.features; let i = index"
+          dstReveal
+          [dstRevealDelay]="(i % 4) * 70"
+        >
+          <dst-icon name="check-circle" [size]="20"></dst-icon>
+          <span>{{ f }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dst-solutions-grid
+    [title]="'Explorez nos autres solutions'"
+    [subtitle]="''"
+    [showEyebrow]="false"
+    [limit]="4"
+  ></dst-solutions-grid>
+
+  <dst-cta></dst-cta>
+</ng-container>
+
+<ng-template #notFound>
+  <section class="dst-detail-notfound">
+    <div class="dst-container">
+      <h1>Solution introuvable</h1>
+      <p>Cette solution n'existe pas ou plus. Découvrez l'ensemble de nos solutions digitales santé.</p>
+      <a routerLink="/solutions" class="dst-btn dst-btn-primary">Voir toutes les solutions</a>
+    </div>
+  </section>
+</ng-template>

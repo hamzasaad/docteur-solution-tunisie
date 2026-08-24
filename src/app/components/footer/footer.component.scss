@@ -1,0 +1,107 @@
+.dst-footer {
+  background: var(--dst-gradient-dark);
+  color: rgba(255, 255, 255, 0.85);
+  padding-top: 72px;
+}
+
+.dst-footer__top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.dst-footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-family: var(--dst-font-display);
+  font-weight: 600;
+  margin-bottom: 16px;
+  strong { font-weight: 800; }
+}
+
+.dst-footer__logo-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--dst-gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dst-footer__brand p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14.5px;
+  max-width: 320px;
+}
+
+.dst-footer__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--dst-turquoise);
+  background: rgba(25, 195, 177, 0.12);
+  padding: 8px 14px;
+  border-radius: 999px;
+  margin-top: 8px;
+}
+
+.dst-footer__col h3 {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+.dst-footer__col ul {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dst-footer__col a {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14.5px;
+  transition: color .2s ease;
+  &:hover { color: var(--dst-turquoise); }
+}
+
+.dst-footer__contact li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+
+  a {
+    color: rgba(255, 255, 255, 0.65);
+    transition: color .2s ease;
+    &:hover { color: var(--dst-turquoise); }
+  }
+}
+
+.dst-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 26px 24px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .dst-footer__top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .dst-footer__top { grid-template-columns: 1fr; }
+  .dst-footer__bottom { flex-direction: column; }
+}

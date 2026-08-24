@@ -1,0 +1,60 @@
+<footer class="dst-footer">
+  <div class="dst-container dst-footer__top">
+    <div class="dst-footer__brand">
+      <a routerLink="/" class="dst-footer__logo">
+        <span class="dst-footer__logo-mark">DST</span>
+        <span>Docteur Solution <strong>Tunisie</strong></span>
+      </a>
+      <p>
+        40 ans d'expertise santé. Une nouvelle génération de solutions
+        digitales pour les professionnels de santé.
+      </p>
+      <div class="dst-footer__badge">
+        <dst-icon name="map-pin" [size]="16"></dst-icon>
+        <span>Tunisie · Origine française</span>
+      </div>
+    </div>
+
+    <div class="dst-footer__col">
+      <h3>Solutions</h3>
+      <ul>
+        <li *ngFor="let link of solutionLinks">
+          <a [routerLink]="link.path">{{ link.label }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="dst-footer__col">
+      <h3>Entreprise</h3>
+      <ul>
+        <li *ngFor="let link of companyLinks">
+          <a [routerLink]="link.path">{{ link.label }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="dst-footer__col">
+      <h3>Contact</h3>
+      <ul class="dst-footer__contact">
+        <li>
+          <dst-icon name="mail" [size]="16"></dst-icon>
+          <a href="mailto:docteursolution.tn@gmail.com">docteursolution.tn&#64;gmail.com</a>
+        </li>
+        <li>
+          <dst-icon name="phone" [size]="16"></dst-icon>
+          <a href="tel:+21622619643">+216 22 619 643</a>
+        </li>
+        <li>
+          <dst-icon name="phone" [size]="16"></dst-icon>
+          <a href="tel:+21696382311">+216 96 382 311</a>
+        </li>
+        <li><dst-icon name="map-pin" [size]="16"></dst-icon> Tunis, Tunisie</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dst-container dst-footer__bottom">
+    <p>&copy; {{ year }} Docteur Solution Tunisie. Tous droits réservés.</p>
+    <p class="dst-footer__legal">Site vitrine de démonstration — données affichées à titre illustratif.</p>
+  </div>
+</footer>
