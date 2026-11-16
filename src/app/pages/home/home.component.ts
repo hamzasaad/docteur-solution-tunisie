@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HeroComponent } from '../../components/hero/hero.component';
+import { DemoComponent } from '../../components/demo/demo.component';
 import { StatsComponent } from '../../components/stats/stats.component';
 import { SolutionsGridComponent } from '../../components/solutions-grid/solutions-grid.component';
 import { TechProfessionalsComponent } from '../../components/tech-professionals/tech-professionals.component';
@@ -16,6 +17,7 @@ import { CtaComponent } from '../../components/cta/cta.component';
   standalone: true,
   imports: [
     HeroComponent,
+    DemoComponent,
     StatsComponent,
     SolutionsGridComponent,
     TechProfessionalsComponent,

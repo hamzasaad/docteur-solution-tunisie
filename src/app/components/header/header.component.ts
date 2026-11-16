@@ -20,7 +20,7 @@ export class HeaderComponent {
     { label: 'Expertise', path: '/a-propos', fragment: 'expertise' },
     { label: 'À propos', path: '/a-propos' },
     { label: 'Innovation', path: '/a-propos', fragment: 'innovation' },
-    { label: 'Contact', path: '/contact' }
+    { label: 'Démonstration', path: '/', fragment: 'demonstration' }
   ];
 
   @HostListener('window:scroll')

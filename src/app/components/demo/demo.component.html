@@ -1,0 +1,40 @@
+<section class="dst-demo" id="demonstration">
+  <div class="dst-demo__orb dst-demo__orb--a" aria-hidden="true"></div>
+  <div class="dst-demo__orb dst-demo__orb--b" aria-hidden="true"></div>
+
+  <div class="dst-container">
+    <div class="dst-demo__head" dstReveal>
+      <h2>Démonstration : DentiCab Pro, le logiciel du cabinet dentaire</h2>
+      <p>Regardez en 50 secondes comment gérer l’agenda, les patients et la facturation de votre cabinet.</p>
+    </div>
+
+    <div class="dst-demo__scene" #stage>
+      <div class="dst-demo__frame" dstTilt>
+        <video
+          #video
+          [src]="src"
+          [poster]="poster"
+          controls
+          playsinline
+          preload="metadata"
+          (play)="playing = true"
+          (pause)="playing = false"
+          (timeupdate)="onTime()"
+        ></video>
+        <button *ngIf="!playing" type="button" class="dst-demo__play" (click)="toggle()" aria-label="Lancer la démonstration">
+          <dst-icon name="video" [size]="30"></dst-icon>
+        </button>
+      </div>
+      <div class="dst-demo__reflection" aria-hidden="true"></div>
+    </div>
+
+    <ul class="dst-demo__chapters">
+      <li *ngFor="let c of chapters; let i = index">
+        <button type="button" [class.is-active]="activeTime === c.time" (click)="seek(c.time)">
+          <dst-icon [name]="c.icon" [size]="22"></dst-icon>
+          <span><strong>{{ c.label }}</strong>{{ c.desc }}</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -208,3 +208,14 @@
   .dst-hero { padding: 48px 0 72px; }
   .dst-hero__trust { flex-wrap: wrap; row-gap: 14px; }
 }
+
+// 3D depth: floating cards sit in front of the tilting mockup
+.dst-hero__visual { perspective: 1400px; }
+.dst-hero__floating-card { transform: translateZ(70px); }
+@media (prefers-reduced-motion: no-preference) {
+  .dst-hero__mockup { animation: dst-hero-spin 1.4s cubic-bezier(.16,.84,.44,1) both; }
+}
+@keyframes dst-hero-spin {
+  from { transform: perspective(1100px) rotateY(-28deg) rotateX(10deg) scale(.92); opacity: 0; }
+  to { transform: perspective(1100px) rotateY(0) rotateX(0) scale(1); opacity: 1; }
+}

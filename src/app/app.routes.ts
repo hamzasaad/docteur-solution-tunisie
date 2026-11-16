@@ -25,11 +25,5 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/about/about.component').then((m) => m.AboutComponent),
     title: 'À propos — 40 ans d’expertise santé — Docteur Solution Tunisie'
   },
-  {
-    path: 'contact',
-    loadComponent: () =>
-      import('./pages/contact/contact.component').then((m) => m.ContactComponent),
-    title: 'Contact — Docteur Solution Tunisie'
-  },
   { path: '**', redirectTo: '' }
 ];
